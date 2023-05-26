@@ -13,7 +13,6 @@ import (
 func GetSecret(secretName string) (models.SecretRDSJson, error) {
 	var secretRDSJson models.SecretRDSJson
 
-	fmt.Println("> Ask for secret: " + secretName)
 	secretManageClient := secretsmanager.NewFromConfig(awsgo.Cfg)
 
 	key, err := secretManageClient.GetSecretValue(awsgo.Ctx, &secretsmanager.GetSecretValueInput{SecretId: aws.String(secretName)})

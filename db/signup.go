@@ -9,7 +9,7 @@ import (
 )
 
 func SignUp(sig models.SignUp) error {
-	fmt.Println("SignUp")
+	fmt.Println("Signing Up")
 	err := DbConnect()
 	if err != nil {
 		return err
@@ -18,7 +18,7 @@ func SignUp(sig models.SignUp) error {
 	defer Db.Close()
 
 	sentence := "INSERT INTO users (User_UUID, User_Email, User_DateAdd) VALUES ('" + sig.UserUUID + "', '" + sig.UserEmail + "', '" + tools.DateMySQL() + "')"
-	fmt.Println("Sentence: " + sentence)
+
 	_, err = Db.Exec(sentence)
 	if err != nil {
 		fmt.Println("Error: " + err.Error())
