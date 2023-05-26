@@ -4,6 +4,5 @@ git add .
 git commit -m "update"
 git push origin main
 
-go build
-rm main.zip
-zip main.zip main
+env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o . main.go
+zip bin/api.zip bin/api
