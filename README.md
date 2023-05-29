@@ -12,7 +12,10 @@ En ese momento entra en funcionamiento esta aplicación hecha en Go. Recibimos e
 -   Cuenta en AWS
 -   Configuración de un pool de usuarios en Cognito
 -   Base de datos MySQL en AWS
+-   Configurar un secret en Secrets Manager en AWS con la información de la base de datos
 -   Crear una función Lambda en AWS
+-   Crear una variable de entorno con el nombre del secreto creado en Secrets Manager
+-   Crear un trigger en la función Lambda para que reciba los eventos de Cognito
 
 ## Instalación
 
